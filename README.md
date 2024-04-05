@@ -23,9 +23,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 1. Install IntelliJ
 2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
 3. Build Springboot Project
 4. Run Springboot project
 5. Open browser at : localhost:8080/#/home
