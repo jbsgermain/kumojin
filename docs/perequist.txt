@@ -1,0 +1,2 @@
+Java 17 or later
+Gradle 7.5+ 
