@@ -25,7 +25,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 2. Clone the repo
 3. Build Springboot Project
 4. Run Springboot project
-5. 
 6. Open browser at : localhost:8080/#/home
 
 <!-- ROADMAP -->
