@@ -6,9 +6,8 @@ On parle alors d'un temps de développement d'environ 5h30
 
 Contraintes et problèmes:
 * Comme je ne suis pas habitué de travailler en Java, j'ai donc du faire des lecture et prendre le temps de comprendre les Best practice de base
-* J'ai eu de la difficulté a trouvé une source de donnée rapidement pour la localisation des événement.
-* Je n'ai pas eu le temps d'implémenter la gestion des timezones.
-* La mécanique est en place pour implémenter des test mais je n'ai pas eu le temps de programmer les tests.
+* J'ai eu de la difficulté a trouvé une source de donnée rapidement pour localiser les événement avec leur timezone.
+* La mécanique est en place pour implémenter des test mais je n'ai pas eu le temps de les programmer.
 
 ### Built With
 
@@ -26,7 +25,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
 2. Clone the repo
 3. Build Springboot Project
 4. Run Springboot project
-5. Open browser at : localhost:8080/#/home
+5. 
+6. Open browser at : localhost:8080/#/home
 
 <!-- ROADMAP -->
 ## Roadmap
