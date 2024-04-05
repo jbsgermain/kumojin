@@ -1,0 +1,40 @@
+<div class="event"
+    (click)="eventClick.emit(event)"
+    (mouseenter)="mouseover = true" 
+    (mouseleave)="mouseover = false">
+
+    @if(event.image) {
+        <img height="100%" id="top-img" [src]=event.image alt="alternative text" loading="lazy">
+    }
+    @else {
+        <img height="100%" id="top-img" src="https://premium-construction.ca/wp-content/themes/brixel/images/No-Image-Found-400x264.png" alt="alternative text" >
+    }
+    
+    <mat-card class="event-card">
+        <mat-card-title-group>
+            <mat-card-title #title>
+                <div class="event-card-wrapper">
+                    <h2> 
+                        {{event.name}}
+                    </h2>
+                    <h4>
+                        {{event.city}}
+                    </h4>
+                </div>
+
+                
+            </mat-card-title>
+        </mat-card-title-group>
+        
+        <div class="info-wrapper">
+            <div></div>
+            <div *ngIf="mouseover" id="info-section">
+                {{event.startDate}} - {{event.endDate}}
+            </div>
+        </div>
+
+    </mat-card>
+    
+    
+    
+</div>

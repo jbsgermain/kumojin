@@ -1,0 +1,19 @@
+@import '../../../../../assets/scss/brand.scss';
+
+
+mat-form-field {
+    margin: 5px 5px 5px 5px;
+}
+
+#description {
+    width: 100% !important;
+}
+
+.field {
+    width: 50%;
+}
+
+.create-btn {
+    background-color: $primary !important;
+    color: white !important;
+}

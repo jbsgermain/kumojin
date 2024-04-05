@@ -1,0 +1,23 @@
+@import '../../../../../assets/scss/brand.scss';
+
+.event-grid {
+    display: grid;
+    width: calc(100% + 15px);
+    grid-gap: 15px;
+    grid-template-columns:  calc(calc(100% - 60px)/4) calc(calc(100% - 60px)/4) calc(calc(100% - 60px)/4) calc(calc(100% - 60px)/4);
+}
+
+.add-button {
+    height: 75px;
+    width: 75px;
+    position: fixed !important;
+    bottom: 50px !important;
+    right: 75px !important;
+    z-index: 10;
+}
+
+.no-event {
+    width: 100%;
+    text-align: center;
+    color: $primary;
+}

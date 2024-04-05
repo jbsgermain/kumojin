@@ -1,0 +1,88 @@
+<h1 mat-dialog-title>
+    @if(event) {  
+        {{event.name}} 
+    }
+    @else {
+        Nouvel événement
+    }
+</h1>    
+
+<div mat-dialog-content>
+    <form class="form">
+        <mat-form-field [formGroup]="form" style="width: 35ch;" appearance="fill">
+          <mat-label>Événement</mat-label>
+          <input formControlName="name" matInput type="text">
+        </mat-form-field>
+
+        <br>
+
+
+        <mat-form-field [formGroup]="form" style="width: 35ch;">
+            <mat-label>Pays</mat-label>
+            <mat-select (valueChange)="onCountryChanged($event)" formControlName="country">
+              @for (country of countries; track country) {
+                <mat-option [value]="country.country">{{country.country}}</mat-option>
+              }
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field [formGroup]="form" style="width: 35ch;">
+            <mat-label>Ville</mat-label>
+            <mat-select (valueChange)="onCityChanged($event)" formControlName="city">
+              @for (city of cities; track city) {
+                <mat-option [value]="city">{{city}}</mat-option>
+              }
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field  appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
+              <input matStartDate formControlName="startDate" placeholder="Start date">
+              <input matEndDate formControlName="endDate" placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          
+            @if (form.controls.startDate.hasError('matStartDateInvalid')) {
+              <mat-error>Invalid start date</mat-error>
+            }
+            @if (form.controls.endDate.hasError('matEndDateInvalid')) {
+              <mat-error>Invalid end date</mat-error>
+            }
+        </mat-form-field>
+
+
+        <mat-form-field [formGroup]="form" style="width: 100%;" appearance="fill">
+            <mat-label>Image(Url)</mat-label>
+            <input formControlName="image" matInput type="text" placeholder="Image" >
+        </mat-form-field>
+
+        <mat-form-field [formGroup]="form" id="description">
+            <mat-label>Description</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+        </mat-form-field>
+      
+      </form>
+</div>
+
+
+<mat-dialog-actions align="end">
+    <button [mat-dialog-close] mat-flat-button>
+        <mat-icon>close</mat-icon>
+        Annuler
+    </button>
+    @if(event){        
+        <button (click)="post()" class="create-btn" mat-flat-button>
+            <mat-icon>add</mat-icon>
+            Enregistrer
+        </button>
+    }
+    @else(){
+        <button (click)="post()" class="create-btn" mat-flat-button>
+            <mat-icon>add</mat-icon>
+            Créer
+        </button> 
+    }
+</mat-dialog-actions>
